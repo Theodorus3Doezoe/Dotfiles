@@ -68,3 +68,12 @@ fish_add_path /home/sven/.local/bin
 function wake
     systemd-inhibit --what=sleep --why="Terminal actief" --mode=block sleep infinity
 end
+
+function dot-push -d "Haal gewijzigde configs op en push naar GitHub"
+    chezmoi re-add
+    git -C ~/.local/share/chezmoi add -A
+    set -l msg (test -n "$argv"; and echo "$argv"; or echo "Update dotfiles: "(date "+%Y-%m-%d %H:%M"))
+    git -C ~/.local/share/chezmoi commit -m "$msg"
+    git -C ~/.local/share/chezmoi push
+    echo "🚀 Dotfiles succesvol bijgewerkt en gepusht!"
+end
