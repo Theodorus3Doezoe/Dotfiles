@@ -8,7 +8,6 @@ hyprlock
 hyprpolkitagent
 waybar
 rofi
-wlogout
 pavucontrol
 
 # Screen capture, clipboard & media controls
@@ -80,9 +79,7 @@ unzip
 # ==============================================================================
 obsidian
 discord
-telegram-desktop
 thunderbird
-firefox
 qutebrowser
 python-adblock
 
