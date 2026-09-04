@@ -1,0 +1,53 @@
+{
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true,
+    },
+
+
+    "clock": {
+        "format": "{:%H:%M}",
+    },
+	
+
+"battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "format": "{capacity}% {icon}",
+    "format-charging": "󰂄",  // Batterij met bliksem erin
+    "format-plugged": "󰚥",   // Stekker icoon
+    // De ramp van leeg (0%) naar vol (100%)
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "states": {
+        "warning": 30,  // Oranje bij 30% (optioneel)
+        "critical": 20  // Rood bij 20% of lager
+    }
+},
+
+    "network": {
+        "format-wifi": "{icon}",
+        "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "ghostty --class=nmtui-zwevend -e nmtui"
+    },
+
+    "bluetooth": {
+        "format": "\uf293",
+        "format-disabled": "\uf294",
+        "format-connected": "\uf293 {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 16
+    },
+}

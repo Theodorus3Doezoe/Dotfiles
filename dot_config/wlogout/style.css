@@ -1,0 +1,45 @@
+/* 1. De achtergrond van het hele scherm (dimmer) */
+window {
+    background-color: rgba(0, 0, 0, 0.6); /* Donker, zodat je wallpaper dimt */
+}
+
+/* 2. De knoppen zelf */
+button {
+    background-color: rgba(20, 20, 20, 0.60); /* Zelfde tint als je Rofi */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;       /* Mooie ronde hoeken */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;      /* Icoontjes klein houden */
+    
+    margin: 5px;               /* Ruimte tussen de knoppen */
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* 3. Hover effect: Jouw Sky Blue kleur! */
+button:hover {
+    background-color: rgba(137, 220, 235, 0.2); /* #89dceb met transparantie */
+    border-color: #89dceb;                      /* De vaste kleur */
+}
+
+/* 4. Focus effect (als je met tab erdoorheen gaat) */
+button:focus {
+    border-color: #89dceb;
+}
+
+/* 5. De iconen koppelen */
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}

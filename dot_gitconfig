@@ -1,0 +1,14 @@
+[user]
+	email = svendinkla@gmail.com
+	name = Sven Dinkla
+[credential]
+	credentialStore = secretservice
+	helper = /usr/sbin/git-credential-manager
+[credential "https://git.fhict.nl"]
+	provider = generic
+[push]
+	autoSetupRemote = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[includeIf "gitdir:~/school/"]
+    path = ~/.gitconfig-school

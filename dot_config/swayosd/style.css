@@ -1,0 +1,34 @@
+/* De hoofdcontainer (het venster zelf) */
+window {
+    /* Dezelfde transparante donkere kleur als Rofi */
+    background-color: rgba(20, 20, 20, 0.60); 
+    
+    /* Dezelfde rand en ronding */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    
+    /* Zorg dat het venster niet te breed wordt */
+    padding: 0px 10px; 
+}
+
+/* Het icoontje (Speaker / Zonnetje) */
+image, label {
+    color: #ffffff;
+    margin-right: 15px; /* Ruimte tussen icoon en balk */
+}
+
+/* De achtergrond van de balk (het 'lege' gedeelte) */
+trough {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtiel grijs */
+    border-radius: 6px;
+    min-height: 8px; /* Dikte van de balk */
+    min-width: 200px; /* Breedte van de balk */
+}
+
+/* De voortgangsbalk zelf (het 'gevulde' gedeelte) */
+progress {
+    background-color: #ffffff; /* Wit, lekker clean contrast */
+    border-radius: 6px;
+    min-height: 8px;
+    box-shadow: none; /* Geen extra schaduwen, lekker flat */
+}

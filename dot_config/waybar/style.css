@@ -1,0 +1,44 @@
+@define-color foreground #cdd6f4;
+@define-color foreground-inactive #4B5263;
+@define-color background rgba(30,34,42,0.8);
+@define-color accent #89dceb;
+* {
+    font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NF", sans-serif;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    color: @foreground;
+}
+
+#waybar {
+    background-color: @background; 
+    color: white;
+}
+
+#workspaces button {
+    color: @foreground-inactive;
+    min-width: 20px;
+}
+
+/* Voeg dit toe om zeker te weten dat de tekst ook verkleurt */
+#workspaces button.active label {
+    color: @accent;
+}
+
+
+#workspaces {
+    margin-left: 12px;
+}
+
+.modules-right {
+  margin-right: 12px;
+}
+
+#network,
+#bluetooth{
+    margin-left: 20px;
+}
+
+#battery{
+    padding: 0 4px;    
+}

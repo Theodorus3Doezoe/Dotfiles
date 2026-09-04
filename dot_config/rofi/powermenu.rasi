@@ -1,0 +1,73 @@
+configuration {
+    font: "JetBrainsMono Nerd Font 20";
+    show-icons: false;
+}
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+    
+    background: #1B1B27;
+    // background-alt: #282a36;  
+    line: #44475a; 
+    foreground: #f8f8f2;  
+    active: #89dcebfe;
+    // selected: #ffb86c;
+    
+    background-color: @background;
+    text-color: @foreground;
+}
+
+window {
+    background-color: @background;
+    border: 2px;
+    border-color: @line;
+    border-radius: 20px;
+    width: 700px;           /* Iets breder geeft meer ademruimte */
+    // height: 140px;          /* Iets hoger voor betere verticale centrering */
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    background-color: @background;
+    children: [ listview ];
+    padding: 20px; /* Ruimte rondom de knoppen */
+}
+
+listview {
+    background-color:            transparent;
+    layout:                      vertical; /* Vertical + columns = grid */
+    columns:                     5;        /* Dit dwingt de 5 iconen naast elkaar */
+    lines:                       1;        /* Dit dwingt ze op één regel */
+    spacing:                     10px;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    fixed-columns:               true;
+}
+
+element {
+    background-color: transparent;
+    text-color: @foreground; /* Maak ze wit zodat ze zichtbaar zijn */
+    orientation: horizontal;
+    expand: true; /* Dit werkt als flex-grow: 1 */
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    font: "JetBrainsMono Nerd Font 40"; /* Iets grotere icoontjes */
+    expand: true;
+    horizontal-align: 0.5; /* Centreert horizontaal in het element */
+    vertical-align: 0.5;   /* Centreert verticaal in het element */
+    cursor: pointer;
+}
+
+element selected {
+    background-color: @background-alt; /* Licht de achtergrond op bij selectie */
+    text-color: @active;
+    border-radius: 15px;
+}

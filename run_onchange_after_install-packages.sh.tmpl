@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# Trigger alleen als de lijst wijzigt:
+# packages.txt: {{ include "packages.txt" | sha256sum }}
+# packages-aur.txt: {{ include "packages-aur.txt" | sha256sum }}
+
+REPO_FILE="{{ joinPath .chezmoi.sourceDir "packages.txt" }}"
+AUR_FILE="{{ joinPath .chezmoi.sourceDir "packages-aur.txt" }}"
+
+echo "==> Ontbrekende programma's installeren..."
+
+# Officiële tools
+if [ -f "$REPO_FILE" ]; then
+    grep -vE '^\s*#' "$REPO_FILE" | grep -v '^\s*$' | sudo pacman -S --needed -
+fi
+
+# AUR tools (indien aanwezig)
+if [ -f "$AUR_FILE" ]; then
+    if command -v paru &> /dev/null; then
+        grep -vE '^\s*#' "$AUR_FILE" | grep -v '^\s*$' | paru -S --needed -
+    elif command -v yay &> /dev/null; then
+        grep -vE '^\s*#' "$AUR_FILE" | grep -v '^\s*$' | yay -S --needed -
+    fi
+fi
+
+# Vial udev rules (toegang tot keyboard zonder root)
+if [ ! -f /etc/udev/rules.d/99-vial.rules ]; then
+    echo "==> Vial udev rules instellen..."
+    echo 'KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", TAG+="uaccess", TAG+="udev-acl"' | sudo tee /etc/udev/rules.d/99-vial.rules > /dev/null
+    sudo udevadm control --reload-rules && sudo udevadm trigger
+fi
+
+# User systemd services inschakelen
+if systemctl --user list-unit-files | grep -q hyprmoncfgd.service; then
+    systemctl --user enable --now hyprmoncfgd.service 2>/dev/null || true
+fi

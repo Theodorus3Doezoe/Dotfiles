@@ -1,0 +1,88 @@
+# ==============================================================================
+# 1. WINDOW MANAGER & DESKTOP ENVIRONMENT (HYPRLAND)
+# ==============================================================================
+hyprland
+hyprpaper
+hypridle
+hyprlock
+hyprpolkitagent
+waybar
+rofi
+wlogout
+pavucontrol
+
+# Screen capture, clipboard & media controls
+grim
+slurp
+swappy
+wl-clipboard
+cliphist
+playerctl
+
+# Authentication & secrets
+gnome-keyring
+libsecret
+
+# ==============================================================================
+# 2. FONTS & ICONS (Voor Ghostty, Waybar, Rofi & Neovim)
+# ==============================================================================
+ttf-jetbrains-mono-nerd
+awesome-terminal-fonts
+
+# ==============================================================================
+# 3. TERMINALS & SHELL
+# ==============================================================================
+ghostty
+fish
+starship
+
+# ==============================================================================
+# 4. CLI TOOLS & BESTANDSBEHEER
+# ==============================================================================
+neovim
+yazi
+zoxide
+ripgrep
+fd
+fzf
+btop
+fastfetch
+git
+lazygit
+jq
+
+# Document & preview tools (gebruikt door Yazi & scripts)
+zathura
+zathura-pdf-mupdf
+ffmpegthumbnailer
+7zip
+poppler
+imagemagick
+
+# ==============================================================================
+# 5. DEVELOPMENT RUNTIMES & TOOLS (Mason, Neovim LSPs & Dev)
+# ==============================================================================
+base-devel
+go
+python
+uv
+nodejs
+npm
+bun
+typst
+graphviz
+plantuml
+rsync
+unzip
+
+# ==============================================================================
+# 6. APPLICATIES
+# ==============================================================================
+obsidian
+discord
+telegram-desktop
+thunderbird
+firefox
+qutebrowser
+python-adblock
+

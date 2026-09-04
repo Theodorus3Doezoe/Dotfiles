@@ -1,0 +1,104 @@
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 true;
+    display-drun:               " ";
+    drun-display-format:        "{name}";
+    /* Zorg dat je hier de naam van jouw icon theme invult */
+    icon-theme:                 "Papirus-Dark"; 
+}
+
+* {
+    /* Kleuren variabelen - pas deze aan naar smaak */
+    background:                 rgba(20, 20, 20, 0.60); /* 60% transparant zwart */
+    // background-alt:             rgba(255, 255, 255, 0.05);
+    foreground:                 #ffffff;
+    selected:                   rgba(20, 20, 20, 0.10); /* Lichte highlight */
+    border-color:               rgba(255, 255, 255, 0.1);
+    // border-color:               #89dcebfe;    
+    font:                       "JetBrains Mono Nerd Font 12"; /* Of je favoriete font */
+}
+
+window {
+    transparency:               "real";
+    location:                   center;
+    anchor:                     center;
+    width:                      600px; /* Breedte van het menu */
+    
+    background-color:           @background;
+    text-color:                 @foreground;
+    
+    border:                     1px;
+    border-color:               @border-color;
+    border-radius:              12px; /* De afgeronde hoeken */
+    padding:                    20px;
+}
+
+inputbar {
+  children:   [ prompt, entry ];
+    enabled:                    true;
+    background-color:           transparent;
+    text-color:                 @foreground;
+    padding:                    10px;
+    margin:                     0px 0px 10px 0px;
+}
+
+entry {
+    background-color:           transparent;
+    text-color:                 @foreground;
+    placeholder-color:          rgba(255, 255, 255, 0.5);
+}
+
+listview {
+    background-color:           transparent;
+    columns:                    1;
+    lines:                      6; /* Aantal items in de lijst */
+    spacing:                    5px;
+    cycle:                      true;
+    dynamic:                    true;
+    layout:                     vertical;
+    border:                     0;
+    scrollbar:                  false;
+}
+
+/* Zorg dat de basis transparant is */
+element {
+    background-color: transparent;
+    text-color:       @foreground;
+    padding:          10px;
+    border-radius:    8px;
+}
+
+/* DIT IS DE OPLOSSING:
+   We zetten 'normal' EN 'alternate' (de even rijen) 
+   allebei expliciet op transparant. */
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @foreground;
+}
+
+/* Alleen de geselecteerde rij krijgt een kleur */
+element selected.normal {
+    background-color: rgba(255, 255, 255, 0.1); /* Of jouw grijze kleur */
+    text-color:       @foreground;
+}
+
+element-icon {
+    background-color:           transparent;
+    text-color:                 inherit;
+    size:                       24px;
+    cursor:                     inherit;
+    margin:                     0px 10px 0px 0px;
+}
+
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+    vertical-align:             0.5;
+    cursor:                     inherit;
+}
+
+element selected {
+    background-color:           @selected;
+    text-color:                 @foreground;
+}

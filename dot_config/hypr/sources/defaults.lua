@@ -1,0 +1,5 @@
+mainMod = "SUPER"
+terminal = "ghostty"
+fileManager = "thunar"
+menu = "rofi -show drun"
+browser = "brave"

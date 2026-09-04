@@ -1,0 +1,31 @@
+# ==============================================================================
+# AUR PACKAGES
+# ==============================================================================
+
+# Desktop & Hyprland enhancements
+swayosd-git
+hyprmoncfg
+coolercontrol-bin
+coolercontrold-bin
+
+# Git & Authentication
+git-credential-manager-bin
+
+# Web & Browser
+brave-origin-nightly-bin
+
+# Hardware & Peripherals (QMK / Keyboard)
+vial-appimage
+
+# Cloud & Sync
+seafile
+seafile-client
+
+# Utilities, Sharing & Launchers
+localsend-bin
+omniroute-bin
+bolt-launcher
+antigravity-cli
+
+# Optional Dev (Node-RED)
+# nodejs-node-red
