@@ -1,0 +1,7 @@
+[package]
+name = "school-template"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Sven Dinkla"]
+license = "MIT"
+description = "School template"
